@@ -9,18 +9,23 @@
 </template>
 
 <script>
-  import { computed } from 'vue'
+  import { computed, getCurrentInstance } from 'vue'
   import { useStore } from 'vuex'
 
   export default {
     name: 'Test',
     setup() {
+      const proxy = getCurrentInstance()
+      console.log(proxy)
+      proxy.appContext.config.globalProperties.$testFn('全局方法')
+      console.log(proxy.appContext.config.globalProperties.$testVar)
+
       /**
        * 通过调用 useStore 函数，来在 setup 钩子函数中访问 store
        * 这与在组件中使用选项式 API 访问 this.$store 是等效的
        */
       const store = useStore()
-      console.log('store', store)
+      // console.log('store', store)
 
       /**
        * 访问 state 和 getter，需要创建 computed 引用以保留响应性
