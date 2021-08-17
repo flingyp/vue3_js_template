@@ -24,6 +24,7 @@
        * 这与在组件中使用选项式 API 访问 this.$store 是等效的
        */
       const store = useStore()
+      console.log('进行不同IDE代码提交测试')
       // console.log('store', store)
 
       /**
