@@ -12,6 +12,13 @@
       "pre-commit": "lint-staged"
     }
   },
+  "lint-staged": {
+    "src/**": [
+      "prettier --config .prettierrc --write",
+      "eslit --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "less": "^4.1.1",
     "vue-router": "^4.0.10",
