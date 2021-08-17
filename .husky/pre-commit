@@ -2,6 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 # npm test
-../node_modules/.bin/eslint --fix
+node_modules/.bin/eslint --fix --ext .vue,.js,.ts
 # eslint --fix --ext .vue,.js,.ts
 # eslint --fix
