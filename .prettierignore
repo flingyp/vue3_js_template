@@ -1,7 +1,0 @@
-node_modules
-dist
-public
-package.json
-package-lock.json
-index.html
-.gitignore
