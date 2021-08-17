@@ -1,6 +1,8 @@
 module.exports = {
   env: {
-    // es2021: true
+    browser: true,
+    es2021: true,
+    node: true
   },
   extends: [
     'plugin:vue/essential',
@@ -8,11 +10,23 @@ module.exports = {
     'plugin:prettier/recommended' // 添加prettier插件
   ],
   parserOptions: {
-    ecmaVersion: 10,
+    ecmaVersion: 12,
     sourceType: 'module'
   },
   plugins: ['vue'],
   rules: {
-    'import/no-unresolved': [2, { caseSensitive: true('default') | false }]
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
+    'import/no-absolute-path': 'off',
+    'import/no-extraneous-dependencies': 'off',
+    'vue/no-multiple-template-root': 'off',
+    'no-console': 'off',
+    'no-param-reassign': [
+      'error',
+      {
+        props: true,
+        ignorePropertyModificationsFor: ['state', 'config']
+      }
+    ]
   }
 }
