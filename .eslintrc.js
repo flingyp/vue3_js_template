@@ -1,6 +1,6 @@
 module.exports = {
   env: {
-    es2021: true
+    // es2021: true
   },
   extends: [
     'plugin:vue/essential',
