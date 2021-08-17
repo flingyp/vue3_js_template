@@ -8,7 +8,7 @@ module.exports = {
     'plugin:prettier/recommended' // 添加prettier插件
   ],
   parserOptions: {
-    ecmaVersion: 12,
+    ecmaVersion: 10,
     sourceType: 'module'
   },
   plugins: ['vue'],
