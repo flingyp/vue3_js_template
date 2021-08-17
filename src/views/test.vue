@@ -19,7 +19,7 @@
       console.log(proxy)
       proxy.appContext.config.globalProperties.$testFn('全局方法')
       console.log(proxy.appContext.config.globalProperties.$testVar)
-
+      console.log('1111')
       /**
        * 通过调用 useStore 函数，来在 setup 钩子函数中访问 store
        * 这与在组件中使用选项式 API 访问 this.$store 是等效的
