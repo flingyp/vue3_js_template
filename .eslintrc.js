@@ -21,12 +21,8 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'vue/no-multiple-template-root': 'off',
     'no-console': 'off',
-    'no-param-reassign': [
-      'error',
-      {
-        props: true,
-        ignorePropertyModificationsFor: ['state', 'config']
-      }
-    ]
+    'no-plusplus': 'off',
+    'no-unused-vars': 'off',
+    'no-param-reassign': ['error', { props: false }]
   }
 }

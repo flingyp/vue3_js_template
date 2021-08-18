@@ -5,7 +5,7 @@
     {{ gettersCount }}
   </div>
   <button @click="increment" class="vuex-button">点击触发mutations</button>
-  <button @click="asyncIncremt" class="vuex-button">点击触发actions_increment</button>
+  <button @click="asyncIncrement" class="vuex-button">点击触发actions_increment</button>
 </template>
 
 <script>
@@ -15,10 +15,13 @@
   export default {
     name: 'Test',
     setup() {
-      const proxy = getCurrentInstance()
-      console.log(proxy)
-      proxy.appContext.config.globalProperties.$testFn('全局方法')
-      console.log(proxy.appContext.config.globalProperties.$testVar)
+      // 测试 公共方法 commonJs插件是否可以使用
+      const { proxy } = getCurrentInstance()
+      console.log('proxy', proxy)
+      proxy.$comJs.function1()
+      proxy.$comJs.function2()
+      proxy.$http()
+
       /**
        * 通过调用 useStore 函数，来在 setup 钩子函数中访问 store
        * 这与在组件中使用选项式 API 访问 this.$store 是等效的
@@ -26,16 +29,16 @@
       const store = useStore()
       // console.log('store', store)
 
-      /**
-       * 访问 state 和 getter，需要创建 computed 引用以保留响应性
-       * 这与在选项式 API 中创建计算属性等效
-       */
-
-      /**
-       * 使用 mutation 和 action 时
-       * 只需要在 setup 钩子函数中调用 commit 和 dispatch 函数。
-       */
       return {
+        /**
+         * 访问 state 和 getter，需要创建 computed 引用以保留响应性
+         * 这与在选项式 API 中创建计算属性等效
+         */
+
+        /**
+         * 使用 mutation 和 action 时
+         * 只需要在 setup 钩子函数中调用 commit 和 dispatch 函数。
+         */
         count: computed(() => store.state.count), // 访问 state
         gettersCount: computed(() => store.getters.getters_count), // 访问 getter
         increment: () => store.commit('increment'),

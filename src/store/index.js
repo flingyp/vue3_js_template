@@ -11,7 +11,7 @@ const store = createStore({
   },
   getters: {
     getters_count: state => {
-      let gettersCount = `state经过处理的getters_count：${state.count}`
+      const gettersCount = `state经过处理的getters_count：${state.count}`
       return gettersCount
     }
   },
