@@ -20,7 +20,7 @@
       console.log('proxy', proxy)
       proxy.$comJs.function1()
       proxy.$comJs.function2()
-      proxy.$http()
+      proxy.$ajax()
 
       /**
        * 通过调用 useStore 函数，来在 setup 钩子函数中访问 store

@@ -7,6 +7,6 @@ export default {
     // console.log('options', options)
     // Vue3 定义全局变量和方法
     app.config.globalProperties.$comJs = allJs
-    app.config.globalProperties.$http = http
+    app.config.globalProperties.$ajax = http
   }
 }
